@@ -34,7 +34,7 @@ export const Intro = () => {
         animate={{ opacity: 1, y: 0 }}
         className="text-3xl font-bold leading-tight tracking-tighter sm:text-4xl"
       >
-        Front-end developer with a passion for design
+        Front-end developer with over 5 years
       </motion.h1>
       <motion.p
         initial={{ opacity: 0, y: 100 }}
@@ -44,7 +44,7 @@ export const Intro = () => {
         }}
         className="text-muted-foreground max-w-lg"
       >
-        Hello, I&apos;m Azeez. I have a keen eyes for lovely designs.
+        of commercial experience.
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 100 }}
