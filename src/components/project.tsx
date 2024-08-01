@@ -47,7 +47,7 @@ export const Project = ({ project, index }: TProps) => {
         <Image src={image} alt={`${title} image`} width={32} height={32} />
       </div>
       <h3 className="my-2 text-lg font-medium">{title}</h3>
-      <p className="text-muted-foreground line-clamp-4">{description}</p>
+      <div className="text-muted-foreground line-clamp-4">{description}</div>
       <div className="my-3 flex flex-wrap gap-2">
         {technologies.map((tech) => (
           <span className="bg-muted rounded-full px-3 py-1 text-sm" key={tech}>

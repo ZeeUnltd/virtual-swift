@@ -47,9 +47,9 @@ export const Experience = () => {
               {title}
             </h3>
             <p className="!mt-0 !font-normal">{location}</p>
-            <p className="text-muted-foreground !mt-1 !font-normal line-clamp-4">
+            <div className="text-muted-foreground !mt-1 !font-normal line-clamp-4">
               {description}
-            </p>
+            </div>
           </VerticalTimelineElement>
         ))}
       </VerticalTimeline>

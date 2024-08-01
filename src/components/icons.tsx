@@ -10,7 +10,8 @@ import {
   Star,
   Sun,
 } from 'lucide-react';
-
+const customClass = 'dark:invert w-[50px]';
+// localStorage.getItem('theme') !== 'dark' ? 'w-[50px] invert' : 'w-[50px]'
 export const Icons = {
   sun: Sun,
   moon: Moon,
@@ -187,10 +188,10 @@ export const Icons = {
     </svg>
   ),
   vue: (props: LucideProps) => (
-    <img src="https://static-00.iconduck.com/assets.00/vue-js-icon-144x124-ggj8ysx2.png" alt='Vue JS Logo' className=' w-[50px] invert' />
+    <img src="https://static-00.iconduck.com/assets.00/vue-js-icon-144x124-ggj8ysx2.png" alt='Vue JS Logo' className={customClass} />
   ),
   nuxt: (props: LucideProps) => (
-    <img src="https://static-00.iconduck.com/assets.00/nuxt-js-icon-144x107-d25rrwt5.png" alt='Nuxt JS Logo' className=' w-[50px] invert' />
+    <img src="https://static-00.iconduck.com/assets.00/nuxt-js-icon-144x107-d25rrwt5.png" alt='Nuxt JS Logo' className={customClass} />
   ),
-  node: (props: LucideProps) => (<img src="https://static-00.iconduck.com/assets.00/node-icon-144x91-kq8c98mh.png" alt="Node JS Logo" className=' w-[50px] invert' />)
+  node: (props: LucideProps) => (<img src="https://static-00.iconduck.com/assets.00/node-icon-144x91-kq8c98mh.png" alt="Node JS Logo" className={customClass} />)
 };
