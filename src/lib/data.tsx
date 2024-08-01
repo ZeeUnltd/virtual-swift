@@ -24,16 +24,15 @@ export const links = [
 ] as const;
 
 export const projectsData = [
+  // https://aop.ubagroup.com/businessaccountopening/favicon.ico
   {
-    image: '/projects/socialhub.svg',
+    image: 'https://aop.ubagroup.com/businessaccountopening/favicon.ico',
     title: 'Account Opening Revamp Project',
     description:
-      'Next-generation social media app, built with its own backend.Next-generation social media app, built with its own backend.Next-generation social media app, built with its own backend.Next-generation social media app, built with its own backend.Next-generation social media app, built with its own backend.Next-generation social media app, built with its own backend.Next-generation social media app, built with its own backend.Next-generation social media app, built with its own backend.Next-generation social media app, built with its own backend.Next-generation social media app, built with its own backend.Next-generation social media app, built with its own backend.Next-generation social media app, built with its own backend.',
-    technologies: ['Vue', 'Javascript', 'Vuex', 'Bootstrap', 'IIS'],
+      'Next-generation social media app, ',
+    technologies: ['Vue', 'Javascript', 'Vuex', 'Bootstrap', 'IIS', 'i18n'],
     links: {
       preview: 'https://aop.ubagroup.com/businessaccountopening/',
-      github: 'https://github.com/Skolaczk/SocialHub',
-      githubApi: 'https://api.github.com/repos/Skolaczk/SocialHub',
     },
   },
   {

@@ -44,7 +44,7 @@ export const Project = ({ project, index }: TProps) => {
       className="bg-secondary rounded p-5 md:w-1/3"
     >
       <div className="bg-muted w-fit rounded-full p-4">
-        <Image src={image} alt={`${title} image`} width={32} height={32} />
+        <Image src={`${image}`} alt={`${title} image`} width={32} height={32} />
       </div>
       <h3 className="my-2 text-lg font-medium">{title}</h3>
       <div className="text-muted-foreground line-clamp-4">{description}</div>
@@ -55,16 +55,22 @@ export const Project = ({ project, index }: TProps) => {
           </span>
         ))}
       </div>
-      <Button variant="outline" asChild className="mr-2 px-5">
-        <a href={links.preview} aria-label="preview project">
-          <Icons.preview className="size-5" />
-        </a>
-      </Button>
-      <Button variant="outline" asChild className="mr-2 px-5">
-        <a href={links.github} aria-label="github">
-          <Icons.githubOutline className="size-5" />
-        </a>
-      </Button>
+      {
+        links.preview &&
+        <Button variant="outline" asChild className="mr-2 px-5">
+          <a href={links.preview} aria-label="preview project">
+            <Icons.preview className="size-5" />
+          </a>
+        </Button>
+      }
+      {
+        links?.github &&
+        <Button variant="outline" asChild className="mr-2 px-5">
+          <a href={links?.github} aria-label="github">
+            <Icons.githubOutline className="size-5" />
+          </a>
+        </Button>
+      }
       {/* {starsCount[index] > 100 && (
         <Button asChild className="px-5">
           <a href={links.github} aria-label="github">
