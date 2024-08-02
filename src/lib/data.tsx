@@ -29,7 +29,7 @@ export type TProjectLinks = {
   technologies?: string[];
   links?: {
     preview: string;
-    github: string;
+    github?: string;
   };
 };
 export const projectsData: TProjectLinks[] = [
