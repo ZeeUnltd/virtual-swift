@@ -1,148 +1,152 @@
 .home-header {
-    /* display: flex; */
-    align-items: center;
-    /* background: var(--color-gray); */
-    overflow: hidden;
+  /* display: flex; */
+  align-items: center;
+  /* background: var(--color-gray); */
+  overflow: hidden;
 
-    background-color: #000;
-    background: url(https://res.cloudinary.com/beam-sensation/image/upload/v1722471370/portfolio/ag_b-w_image1_twfz6h.png) no-repeat, url(https://res.cloudinary.com/beam-sensation/image/upload/v1722471371/portfolio/Backd-main_u2ydua.svg) no-repeat, linear-gradient(to bottom, #ADB2B6, #ABAEB3);
-    background-size: auto 100vh, cover;
-    background-position: 80%, 70%;
-    background-blend-mode: multiply, darken;
+  background-color: #000;
+  background:
+    url(https://res.cloudinary.com/beam-sensation/image/upload/v1722471370/portfolio/ag_b-w_image1_twfz6h.png)
+      no-repeat,
+    url(https://res.cloudinary.com/beam-sensation/image/upload/v1722471371/portfolio/Backd-main_u2ydua.svg)
+      no-repeat,
+    linear-gradient(to bottom, #adb2b6, #abaeb3);
+  background-size:
+    auto 100vh,
+    cover;
+  background-position: 80%, 70%;
+  background-blend-mode: multiply, darken;
 
-    /* background-position: center;
+  /* background-position: center;
     background-size: cover; */
-    background-repeat: no-repeat;
-    position: relative;
-    color: #fff;
-    min-height: 100vh;
-    overflow: hidden;
-
+  background-repeat: no-repeat;
+  position: relative;
+  color: #fff;
+  min-height: 100vh;
+  overflow: hidden;
 }
-
 
 .hero h1 {
-    margin: 0;
-    opacity: .9;
+  margin: 0;
+  opacity: 0.9;
 }
 
-
 .hero-text {
-    padding: 25px;
-    text-align: center;
+  padding: 25px;
+  text-align: center;
 }
 
 .hero-text p {
-    margin: 0;
-    opacity: .7;
+  margin: 0;
+  opacity: 0.7;
 }
 
 .highlight {
-    font-style: italic;
+  font-style: italic;
 }
 
 .author {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 .team .team-name {
-    text-align: center;
+  text-align: center;
 }
 
 .team .team-name .position {
-    opacity: .7;
+  opacity: 0.7;
 }
 
 .team .team-icon {
-    max-width: 16px;
+  max-width: 16px;
 }
 
 .hero-intro {
-    color: white;
-    font-size: 15rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    /* line-height: 1; */
-    /* filter: blur(0.5rem); */
-    animation: scroll-two 3s linear infinite;
-    /* animation: letterspacing 10s infinite alternate cubic-bezier(.2, 0, 0, 1); */
-    display: block;
-    /* padding-inline-start: 3em; */
-    /* position: absolute; */
-    /* left: 50%;
+  color: white;
+  font-size: 15rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  /* line-height: 1; */
+  /* filter: blur(0.5rem); */
+  animation: scroll-two 3s linear infinite;
+  /* animation: letterspacing 10s infinite alternate cubic-bezier(.2, 0, 0, 1); */
+  display: block;
+  /* padding-inline-start: 3em; */
+  /* position: absolute; */
+  /* left: 50%;
     top: 50%;
     transform: translate3d(-50%, -50%, 0); */
 }
 
 .marquee-text {
-    white-space: nowrap;
-    /* text-transform: uppercase;
+  white-space: nowrap;
+  /* text-transform: uppercase;
     font-size: 35px;
     font-weight: 100; */
-    flex-shrink: 0;
-    /* margin: 0;
+  flex-shrink: 0;
+  /* margin: 0;
     padding: 15px 30px;
     border: 1px solid grey;
     border-radius: 50px;
     color: white;
     background-color: #181818; */
-    display: flex;
-    align-items: center;
-    user-select: none;
+  display: flex;
+  align-items: center;
+  user-select: none;
 }
 
 .marquee {
-    margin: 0em 10px;
-    position: absolute;
-    bottom: -5em;
+  margin: 0em 10px;
+  position: absolute;
+  bottom: -5em;
 }
 
 .marquee-box-one {
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin: 3em 0 0 0;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 3em 0 0 0;
 }
 
 .marquee-content-one {
-    display: flex;
-    gap: 0px;
-    padding: 0 0px;
-    animation: scroll-one 50s linear infinite;
-    line-height: 1;
+  display: flex;
+  gap: 0px;
+  padding: 0 0px;
+  animation: scroll-one 50s linear infinite;
+  line-height: 1;
 }
 
 .marquee-box-two {
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin: 3em 0 6em 0;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 3em 0 6em 0;
 }
 
 .marquee-content-two {
-    display: flex;
-    gap: 40px;
-    padding: 0 20px;
-    animation: scroll-two 40s linear infinite;
+  display: flex;
+  gap: 40px;
+  padding: 0 20px;
+  animation: scroll-two 40s linear infinite;
 }
 
 .marquee-text {
-    white-space: nowrap;
-    text-transform: uppercase;
-    font-size: 12em;
-    font-weight: 300;
-    flex-shrink: 0;
-    margin: 0;
-    padding: 15px 30px;
-    /* border: 1px solid grey;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-size: 12em;
+  font-weight: 300;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 15px 30px;
+  /* border: 1px solid grey;
     border-radius: 50px;
     color: white;
     background-color: #181818; */
-    display: flex;
-    align-items: center;
-    user-select: none;
+  display: flex;
+  align-items: center;
+  user-select: none;
 }
 
 /* .marquee-text:hover {
@@ -150,108 +154,105 @@
     border: 1px solid #31393F;
 } */
 
-
 /* Animations  */
 .fade-in {
-    -webkit-animation: fade-in 1.3s cubic-bezier(0.391, 0.576, 0.565, 1.000) both;
-    animation: fade-in 1.3s cubic-bezier(0.390, 0.576, 0.566, 1.000) both;
+  -webkit-animation: fade-in 1.3s cubic-bezier(0.391, 0.576, 0.565, 1) both;
+  animation: fade-in 1.3s cubic-bezier(0.39, 0.576, 0.566, 1) both;
 }
 
-
 .deformed-circle {
-    box-sizing: border-box;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+  box-sizing: border-box;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
 
 .deformed-circle .box {
-    width: 60vmin;
-    height: 60vmin;
-    border: 1px dashed rgba(255, 255, 255, 0.4);
-    position: relative;
+  width: 60vmin;
+  height: 60vmin;
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  position: relative;
 }
 
 .deformed-circle .box ::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    border-radius: 50%;
-    border: 1px dashed rgba(255, 255, 255, 0.4);
-    transform: scale(1.42);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  transform: scale(1.42);
 }
 
 .waviy span {
-    position: relative;
-    display: inline-block;
-    font-size: 2em;
-    color: orange;
-    text-transform: uppercase;
-    animation: flip 2s infinite;
-    animation-delay: calc(.2s * var(--i))
+  position: relative;
+  display: inline-block;
+  font-size: 2em;
+  color: orange;
+  text-transform: uppercase;
+  animation: flip 2s infinite;
+  animation-delay: calc(0.2s * var(--i));
 }
 
 @-webkit-keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes letterspacing {
-    0% {
-        letter-spacing: -5rem;
-        filter: blur(0.5rem);
-    }
+  0% {
+    letter-spacing: -5rem;
+    filter: blur(0.5rem);
+  }
 
-    50% {
-        filter: blur(0.5rem);
-    }
+  50% {
+    filter: blur(0.5rem);
+  }
 
-    100% {
-        letter-spacing: 0.5rem;
-        filter: blur(0.5rem);
-    }
+  100% {
+    letter-spacing: 0.5rem;
+    filter: blur(0.5rem);
+  }
 }
 
 @keyframes flip {
-
-    0%,
-    80% {
-        transform: rotateY(360deg)
-    }
+  0%,
+  80% {
+    transform: rotateY(360deg);
+  }
 }
 
 @keyframes scroll-one {
-    0% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
 
-    100% {
-        transform: translateX(-100%);
-    }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes scroll-two {
-    0% {
-        transform: translateX(-100%);
-    }
+  0% {
+    transform: translateX(-100%);
+  }
 
-    100% {
-        transform: translateX(0);
-    }
+  100% {
+    transform: translateX(0);
+  }
 }

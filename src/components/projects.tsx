@@ -34,13 +34,9 @@ export const Projects = () => {
           content="Projects I have worked on and still available online, I have worked on alot of projects, but can only preview those with external links for public viewing. Each of them containing its own case study."
         />
       </motion.div>
-      <div className="grid grid-rows  md:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div className="grid-rows grid  gap-3 md:grid-cols-2 lg:grid-cols-3">
         {projectsData.map((project, index) => (
-          <Project
-            key={project.title}
-            project={project}
-            index={index}
-          />
+          <Project key={project.title} project={project} index={index} />
           // starsCount={starsCount}
         ))}
       </div>

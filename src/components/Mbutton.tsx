@@ -1,6 +1,6 @@
-var magnets = document.querySelectorAll('.magnetic')
-var strength = 50
-// GSAP 
+// const magnets = document.querySelectorAll('.magnetic');
+// const strength = 50;
+// GSAP
 // magnets.forEach( (magnet) => {
 //   magnet.addEventListener('mousemove', moveMagnet );
 //   magnet.addEventListener('mouseout', function(event) {

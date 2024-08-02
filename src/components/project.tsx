@@ -1,12 +1,17 @@
 'use client';
 
+import {
+  AwaitedReactNode,
+  JSXElementConstructor,
+  ReactElement,
+  ReactNode,
+  ReactPortal,
+  useState,
+} from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { AwaitedReactNode, JSXElementConstructor, ReactElement, ReactNode, ReactPortal, useState } from 'react';
 
 import { Button } from '@/components/button';
-import { Icons } from '@/components/icons';
-import { projectsData, TProjectLinks } from '@/lib/data';
 import {
   Dialog,
   DialogContent,
@@ -14,6 +19,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/dialog';
+import { Icons } from '@/components/icons';
+import { projectsData, TProjectLinks } from '@/lib/data';
 
 type TProject = (typeof projectsData)[number];
 
@@ -46,14 +53,20 @@ interface ContentProps {
   technologies?: readonly [string | null | undefined];
   setOpen?: (arg0: boolean) => void;
 }
-const Content = ({ noClamp, image, title, setOpen, description, technologies }: ContentProps): JSX.Element => (
+const Content = ({
+  noClamp,
+  image,
+  title,
+  setOpen,
+  description,
+  technologies,
+}: ContentProps): JSX.Element => (
   <>
     <div className="bg-muted w-fit rounded-full p-4">
       <Image src={`${image}`} alt={`${title} image`} width={32} height={32} />
     </div>
     <h3 className="my-2 text-lg font-medium">{title}</h3>
-    <div className={'text-muted-foreground'}>{description}
-    </div>
+    <div className={'text-muted-foreground'}>{description}</div>
 
     {/* {
       noClamp && (
@@ -65,19 +78,22 @@ const Content = ({ noClamp, image, title, setOpen, description, technologies }: 
       )
     } */}
   </>
-)
+);
 export const Project = ({ project, index }: TProps) => {
   const { image, title, description, technologies, links } = project;
   const [open, setOpen] = useState(false);
   // const [selProj, setSelectedProj] = useState(null)
 
-  const Badges = () => <div className="my-3 flex flex-wrap gap-2">
-    {technologies && technologies.map((tech) => (
-      <span className="bg-muted rounded-full px-3 py-1 text-sm" key={tech}>
-        {tech}
-      </span>
-    ))}
-  </div>
+  const Badges = () => (
+    <div className="my-3 flex flex-wrap gap-2">
+      {technologies &&
+        technologies.map((tech) => (
+          <span className="bg-muted rounded-full px-3 py-1 text-sm" key={tech}>
+            {tech}
+          </span>
+        ))}
+    </div>
+  );
 
   return (
     <motion.div
@@ -91,37 +107,38 @@ export const Project = ({ project, index }: TProps) => {
       className="bg-secondary rounded p-5"
     >
       <div className="bg-muted w-fit rounded-full p-4">
-        {
-          image &&
-          <Image src={`${image}`} alt={`${title} image`} width={32} height={32} />
-        }
+        {image && (
+          <Image
+            src={`${image}`}
+            alt={`${title} image`}
+            width={32}
+            height={32}
+          />
+        )}
       </div>
       <h3 className="my-2 text-lg font-medium">{title}</h3>
-      <div className={'text-muted-foreground, line-clamp-4'}>{description}
-      </div>
+      <div className={'text-muted-foreground, line-clamp-4'}>{description}</div>
 
-      <div className='w-full flex justify-end my-3'>
-        <Button onClick={() => setOpen(true)} variant="outline" size="lg" >
+      <div className="my-3 flex w-full justify-end">
+        <Button onClick={() => setOpen(true)} variant="outline" size="lg">
           Read More...
         </Button>
       </div>
       <Badges />
-      {
-        links && links.preview &&
+      {links && links.preview && (
         <Button variant="outline" asChild className="mr-2 px-5">
-          <a href={links.preview} target='_blank' aria-label="preview project">
+          <a href={links.preview} target="_blank" aria-label="preview project">
             <Icons.preview className="size-5" />
           </a>
         </Button>
-      }
-      {
-        links?.github &&
+      )}
+      {links?.github && (
         <Button variant="outline" asChild className="mr-2 px-5">
           <a href={links?.github} aria-label="github">
             <Icons.githubOutline className="size-5" />
           </a>
         </Button>
-      }
+      )}
       {/* {starsCount[index] > 100 && (
         <Button asChild className="px-5">
           <a href={links.github} aria-label="github">
@@ -137,43 +154,48 @@ export const Project = ({ project, index }: TProps) => {
             Menu <Icons.chevronDown className="ml-2 size-4" />
           </Button> */}
         </DialogTrigger>
-        <DialogContent aria-describedby={title} className="text-muted-foreground max-h-screen w-[90%] rounded">
+        <DialogContent
+          aria-describedby={title}
+          className="text-muted-foreground max-h-screen w-[90%] rounded"
+        >
           <DialogHeader>
             <DialogTitle className="text-md self-start font-medium">
-              <span className='opacity-0'>
-                {title}
-              </span>
+              <span className="opacity-0">{title}</span>
             </DialogTitle>
           </DialogHeader>
           <div className="bg-muted w-fit rounded-full p-4">
-            {
-              image &&
-              <Image src={`${image}`} alt={`${title} image`} width={32} height={32} />
-            }
+            {image && (
+              <Image
+                src={`${image}`}
+                alt={`${title} image`}
+                width={32}
+                height={32}
+              />
+            )}
           </div>
           <h3 className="my-2 text-lg font-medium">{title}</h3>
-          <div className={'text-muted-foreground'}>{description}
-          </div>
+          <div className={'text-muted-foreground'}>{description}</div>
           <Badges />
-          {
-            links && links.preview &&
+          {links && links.preview && (
             <Button variant="outline" asChild className="mr-2 px-5">
-              <a href={links.preview} target='_blank' aria-label="preview project">
+              <a
+                href={links.preview}
+                target="_blank"
+                aria-label="preview project"
+              >
                 <Icons.preview className="size-5" />
               </a>
             </Button>
-          }
-          {
-            links?.github &&
+          )}
+          {links?.github && (
             <Button variant="outline" asChild className="mr-2 px-5">
               <a href={links?.github} aria-label="github">
                 <Icons.githubOutline className="size-5" />
               </a>
             </Button>
-          }
+          )}
         </DialogContent>
       </Dialog>
-
     </motion.div>
   );
 };

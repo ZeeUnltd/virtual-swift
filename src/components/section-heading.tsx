@@ -5,7 +5,7 @@ type TProps = {
 
 export const SectionHeading = ({ heading, content }: TProps) => {
   return (
-    <div className="mb-10 w-full justify-center flex" >
+    <div className="mb-10 flex w-full justify-center">
       <div className="w-3/4 text-center ">
         <h2 className="text-3xl font-medium tracking-tighter ">{heading}</h2>
         {content && (

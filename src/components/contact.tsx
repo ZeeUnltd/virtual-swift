@@ -24,12 +24,10 @@ export const Contact = () => {
 
   const onSubmit = async (values: TFormSchema) => {
     // const { data, error } = await sendEmail(values);
-
     // if (error) {
     //   toast.error(error);
     //   return;
     // }
-
     // toast.success(data);
     // reset();
   };
@@ -57,9 +55,7 @@ export const Contact = () => {
         content="Please contact me directly at azegaf@gmail.com or through this form."
       />
       {/* onSubmit={handleSubmit(onSubmit)} */}
-      <form
-        className="flex flex-col items-center gap-5"
-      >
+      <form className="flex flex-col items-center gap-5">
         {/* <div className="w-full max-w-xl">
           <input
             type="email"
@@ -97,12 +93,16 @@ export const Contact = () => {
           Submit <Icons.arrowRight className="ml-2 size-4" />
         </Button> */}
         <Button size={'lg'} className="ml-2">
-          <a href="mailto:azegaf@gmail.com" target='_blank' aria-label="preview project">
+          <a
+            href="mailto:azegaf@gmail.com"
+            target="_blank"
+            aria-label="preview project"
+          >
             Mail Me
             {/* <Icons.arrowRight /> */}
           </a>
         </Button>
       </form>
-    </motion.section >
+    </motion.section>
   );
 };

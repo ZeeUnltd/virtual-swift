@@ -3,12 +3,11 @@ import { Contact } from '@/components/contact';
 import { Experience } from '@/components/experience';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
+import { Hero } from '@/components/home';
 import { Intro } from '@/components/intro';
 import { Projects } from '@/components/projects';
 import { SectionDivider } from '@/components/section-divider';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { projectsData } from '@/lib/data';
-import { Hero } from '@/components/home';
 
 const Home = async () => {
   // const starsCount = await Promise.all(
@@ -21,7 +20,7 @@ const Home = async () => {
 
   return (
     <>
-      <div className='w-full home-header'>
+      <div className="home-header w-full">
         <Hero />
       </div>
       <div className="container flex flex-col items-center">

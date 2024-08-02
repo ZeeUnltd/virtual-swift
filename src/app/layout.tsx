@@ -21,8 +21,10 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   icons: {
     icon: 'https://res.cloudinary.com/beam-sensation/image/upload/v1720735262/portfolio/ag-logo_yy6lau.svg',
-    shortcut: 'https://res.cloudinary.com/beam-sensation/image/upload/v1720735262/portfolio/ag-logo_yy6lau.svg',
-    apple: 'https://res.cloudinary.com/beam-sensation/image/upload/v1720735262/portfolio/ag-logo_yy6lau.svg',
+    shortcut:
+      'https://res.cloudinary.com/beam-sensation/image/upload/v1720735262/portfolio/ag-logo_yy6lau.svg',
+    apple:
+      'https://res.cloudinary.com/beam-sensation/image/upload/v1720735262/portfolio/ag-logo_yy6lau.svg',
   },
   verification: {
     google: siteConfig.googleSiteVerificationId,
