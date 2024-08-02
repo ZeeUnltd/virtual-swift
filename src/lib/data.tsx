@@ -22,8 +22,18 @@ export const links = [
     hash: '#contact',
   },
 ] as const;
+export type TProjectLinks = {
+  image?: string,
+  title?: string,
+  description?: React.ReactNode | string;
+  technologies?: string[];
+  links?: {
+    preview: string;
+    github: string;
+  }
 
-export const projectsData = [
+};
+export const projectsData: TProjectLinks[] = [
   // https://aop.ubagroup.com/businessaccountopening/favicon.ico
   {
     image: 'https://aop.ubagroup.com/businessaccountopening/favicon.ico',

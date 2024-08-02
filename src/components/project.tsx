@@ -6,7 +6,7 @@ import { AwaitedReactNode, JSXElementConstructor, ReactElement, ReactNode, React
 
 import { Button } from '@/components/button';
 import { Icons } from '@/components/icons';
-import { projectsData } from '@/lib/data';
+import { projectsData, TProjectLinks } from '@/lib/data';
 import {
   Dialog,
   DialogContent,
@@ -72,7 +72,7 @@ export const Project = ({ project, index }: TProps) => {
   // const [selProj, setSelectedProj] = useState(null)
 
   const Badges = () => <div className="my-3 flex flex-wrap gap-2">
-    {technologies.map((tech) => (
+    {technologies && technologies.map((tech) => (
       <span className="bg-muted rounded-full px-3 py-1 text-sm" key={tech}>
         {tech}
       </span>
@@ -107,7 +107,7 @@ export const Project = ({ project, index }: TProps) => {
       </div>
       <Badges />
       {
-        links.preview &&
+        links && links.preview &&
         <Button variant="outline" asChild className="mr-2 px-5">
           <a href={links.preview} target='_blank' aria-label="preview project">
             <Icons.preview className="size-5" />
@@ -156,7 +156,7 @@ export const Project = ({ project, index }: TProps) => {
           </div>
           <Badges />
           {
-            links.preview &&
+            links && links.preview &&
             <Button variant="outline" asChild className="mr-2 px-5">
               <a href={links.preview} target='_blank' aria-label="preview project">
                 <Icons.preview className="size-5" />
