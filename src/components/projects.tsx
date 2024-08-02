@@ -31,10 +31,10 @@ export const Projects = () => {
       >
         <SectionHeading
           heading="My Projects"
-          content="Projects I worked on. Each of them containing its own case study."
+          content="Projects I have worked on and still available online, I have worked on alot of projects, but can only preview those with external links for public viewing. Each of them containing its own case study."
         />
       </motion.div>
-      <div className="flex flex-col gap-8 md:flex-row">
+      <div className="grid grid-rows  md:grid-cols-2 lg:grid-cols-3 gap-3">
         {projectsData.map((project, index) => (
           <Project
             key={project.title}

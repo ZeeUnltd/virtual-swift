@@ -56,11 +56,11 @@ export const Contact = () => {
         heading="Get In Touch"
         content="Please contact me directly at azegaf@gmail.com or through this form."
       />
+      {/* onSubmit={handleSubmit(onSubmit)} */}
       <form
-        onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col items-center gap-5"
       >
-        <div className="w-full max-w-xl">
+        {/* <div className="w-full max-w-xl">
           <input
             type="email"
             id="email"
@@ -92,11 +92,17 @@ export const Contact = () => {
               {errors.message?.message}
             </p>
           )}
-        </div>
-        <Button size="lg">
+        </div> */}
+        {/* <Button size="lg">
           Submit <Icons.arrowRight className="ml-2 size-4" />
+        </Button> */}
+        <Button size={'lg'} className="ml-2">
+          <a href="mailto:azegaf@gmail.com" target='_blank' aria-label="preview project">
+            Mail Me
+            {/* <Icons.arrowRight /> */}
+          </a>
         </Button>
       </form>
-    </motion.section>
+    </motion.section >
   );
 };
