@@ -67,8 +67,8 @@ export const Intro = () => {
         >
           <a
             target="_blank"
-            href="https://drive.google.com/file/d/1eqHc_5UgkkNcmiYqqyZT70nMItECnTM6/view?usp=drive_link"
-            download="https://drive.google.com/file/d/1eqHc_5UgkkNcmiYqqyZT70nMItECnTM6/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1dBQOgApw4-OvHNbyLTZUw7QjwbQJDmSy/view"
+            download="https://drive.google.com/file/d/1dBQOgApw4-OvHNbyLTZUw7QjwbQJDmSy/view"
           >
             Download CV <Icons.download className="ml-2 size-4" />
           </a>
