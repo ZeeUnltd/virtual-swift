@@ -52,7 +52,7 @@ export const Contact = () => {
     >
       <SectionHeading
         heading="Get In Touch"
-        content="Please contact me directly at azegaf@gmail.com or through this form."
+        content="Please contact me directly at azegaf@gmail.com."
       />
       {/* onSubmit={handleSubmit(onSubmit)} */}
       <form className="flex flex-col items-center gap-5">
