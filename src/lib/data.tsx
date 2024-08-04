@@ -43,33 +43,32 @@ export const projectsData: TProjectLinks[] = [
         <p>
           To develop a fresh user experience for our potential users; I was to
           to work with one of our UI/UX designers to create a new User
-          experience to our prospective users.
+          experience for our prospective users.
         </p>
         <p>
-          Since there are several products with different onbording processes,
-          the requirment was to creat just one platform that houses all the
+          Since there are several products with different onboarding processes,
+          the requirement was to create just one platform that houses all the
           onboarding processes together in one.
         </p>
         <p>
-          After several Iterations on design, I developed all the components
+          After several iterations on design, I developed all the components
           without overloading the application with several libraries, leveraging
-          i18n as we support multiple languages, and used Vue Js for the
+          i18n as we support multiple languages, and used Vue Js for
           interactivity and Vuex for state management.
         </p>
         <p>
-          I deployed to the testing/staging server and completed the Application
-          ontime after several iteration on adoption. The corporate team
+          I deployed to the testing/staging server and completed the application
+          on time after several iterations of adoption. The corporate team
           department adopted the change instantly and deployed the application
-          before the other departments were ready for the change.
+          before the other departments were ready.
         </p>
 
         <p>
-          The major challenge confronted here was selection for distinctive
+          The major challenge confronted here was the selection of distinctive
           divisions as the backend assets at the time were not REST APIs, so it
-          was reliant on each division to supply the neccessary resources for
-          the plug in. I am happy the platform is still up and running and
-          usable for the following million clients since I cleared out the
-          organization.
+          was reliant on each division to supply the necessary resources for the
+          plug-in. I am happy the platform is still running and usable for the
+          following million clients since I cleared out the organization.
         </p>
       </div>
     ),
