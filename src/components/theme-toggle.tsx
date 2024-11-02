@@ -2,8 +2,8 @@
 
 import { useTheme } from 'next-themes';
 
-import { Button, ButtonProps } from '@/components/button';
-import { Icons } from '@/components/icons';
+import { Button, ButtonProps } from '@/components/ui/button';
+import { Icons } from '@/components/ui/icons';
 
 export const ThemeToggle = ({ className }: ButtonProps) => {
   const { theme, setTheme } = useTheme();

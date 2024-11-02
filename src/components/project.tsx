@@ -11,15 +11,15 @@ import {
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-import { Button } from '@/components/button';
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/dialog';
-import { Icons } from '@/components/icons';
+} from '@/components/ui/dialog';
+import { Icons } from '@/components/ui/icons';
 import { projectsData, TProjectLinks } from '@/lib/data';
 
 type TProject = (typeof projectsData)[number];

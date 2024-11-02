@@ -7,13 +7,21 @@ import React, {
   useState,
 } from 'react';
 
+import { Reservation } from '@/types/reservationTypes';
+import mockData from '@/lib/mock_data.json';
+
 import type { SectionName } from '@/lib/types';
 
 type TActiveSectionContext = {
+  data: Reservation[],
   activeSection: SectionName;
   setActiveSection: React.Dispatch<React.SetStateAction<SectionName>>;
   timeOfLastClick: number;
   setTimeOfLastClick: React.Dispatch<React.SetStateAction<number>>;
+  setData: React.Dispatch<React.SetStateAction<Reservation[]>>;
+  updateRowRecord: (updatedRow: Reservation) => void;
+  createRowRecord: (newRow: Reservation) => void;
+  deleteRowRecord: (row: any) => void;
 };
 
 export const ActiveSectionContext = createContext<TActiveSectionContext | null>(
@@ -23,7 +31,22 @@ export const ActiveSectionContext = createContext<TActiveSectionContext | null>(
 export const ActiveSectionProvider = ({ children }: PropsWithChildren) => {
   const [activeSection, setActiveSection] = useState<SectionName>('Home');
   const [timeOfLastClick, setTimeOfLastClick] = useState(0);
+  const [data, setData] = useState<Reservation[]>(mockData?.reservations);
+  const createRowRecord = (newRow: Reservation) => {
+    setData([...data, newRow]);
+  };
 
+  const updateRowRecord = (updatedRow: Reservation) => {
+    const updatedData = data.map((row) =>
+      row.id === updatedRow.id ? updatedRow : row
+    );
+    setData(updatedData);
+  };
+
+  const deleteRowRecord = (row: any) => {
+    const updatedData = data.filter((r) => r.id !== row.id);
+    setData(updatedData);
+  };
   return (
     <ActiveSectionContext.Provider
       value={{
@@ -31,6 +54,11 @@ export const ActiveSectionProvider = ({ children }: PropsWithChildren) => {
         setActiveSection,
         timeOfLastClick,
         setTimeOfLastClick,
+        data,
+        setData,
+        createRowRecord,
+        updateRowRecord,
+        deleteRowRecord,
       }}
     >
       {children}

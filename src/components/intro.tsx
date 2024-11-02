@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-import { Button } from '@/components/button';
-import { Icons } from '@/components/icons';
+import { Button } from '@/components/ui/button';
+import { Icons } from '@/components/ui/icons';
 import { useSectionInView } from '@/hooks/use-section-in-view';
 
 export const Intro = () => {
@@ -16,7 +16,7 @@ export const Intro = () => {
       id="home"
       className="my-10 flex scroll-mt-96 flex-col items-center gap-4 text-center sm:mt-20"
     >
-      {/* <motion.a
+      <motion.a
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -28,7 +28,7 @@ export const Intro = () => {
       >
         🎉
         <span className="ml-3">Check out my new project</span>
-      </motion.a> */}
+      </motion.a>
       <motion.h1
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}

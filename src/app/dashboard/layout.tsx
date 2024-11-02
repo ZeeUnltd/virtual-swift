@@ -9,7 +9,7 @@ import { Toaster } from '@/components/toaster';
 import { fonts } from '@/lib/fonts';
 import { siteConfig } from '@/lib/site-config';
 import { cn } from '@/lib/utils';
-import { MockDataProvider } from '@/lib/mockState'; 
+import { MockDataProvider } from '@/lib/mockState';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -36,12 +36,14 @@ const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn('min-h-screen font-sans', fonts)}>
-          <ThemeProvider attribute="class">
-            <ActiveSectionProvider>
-              {children}
-              <Toaster position="bottom-left" />
-            </ActiveSectionProvider>
-          </ThemeProvider>
+        <ThemeProvider attribute="class">
+          <ActiveSectionProvider>
+            <main className='container'>
+                {children}
+            </main>
+            <Toaster position="bottom-left" />
+          </ActiveSectionProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

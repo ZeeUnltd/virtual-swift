@@ -6,8 +6,8 @@ import { motion } from 'framer-motion';
 import { toast } from 'sonner';
 
 import { sendEmail } from '@/actions/send-email';
-import { Button } from '@/components/button';
-import { Icons } from '@/components/icons';
+import { Button } from '@/components/ui/button';
+import { Icons } from '@/components/ui/icons';
 import { SectionHeading } from '@/components/section-heading';
 import { useSectionInView } from '@/hooks/use-section-in-view';
 import { formSchema, TFormSchema } from '@/lib/form-schema';

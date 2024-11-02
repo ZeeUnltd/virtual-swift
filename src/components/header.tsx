@@ -5,15 +5,15 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 import { useActiveSection } from '@/components/active-section-provider';
-import { Button } from '@/components/button';
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/dialog';
-import { Icons } from '@/components/icons';
+} from '@/components/ui/dialog';
+import { Icons } from '@/components/ui/icons';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { links } from '@/lib/data';
 
