@@ -40,7 +40,7 @@ export function AppTable() {
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
-  // const [data, setData] = React.useState<Reservation[]>(mockData.reservations);
+  const [data, setData] = React.useState<Reservation[]>(mockData.reservations);
 
   const columns: ColumnDef<Reservation>[] = [
     {
@@ -212,21 +212,21 @@ export function AppTable() {
     },
     // ... you can keep or modify the actions column if needed
   ];
-  const createRowRecord = (newRow: Reservation) => {
-    setData([...data, newRow]);
-  };
+  // const createRowRecord = (newRow: Reservation) => {
+  //   setData([...data, newRow]);
+  // };
 
-  const updateRowRecord = (updatedRow: Reservation) => {
-    const updatedData = data.map((row) =>
-      row.id === updatedRow.id ? updatedRow : row
-    );
-    setData(updatedData);
-  };
+  // const updateRowRecord = (updatedRow: Reservation) => {
+  //   const updatedData = data.map((row) =>
+  //     row.id === updatedRow.id ? updatedRow : row
+  //   );
+  //   setData(updatedData);
+  // };
 
-  const deleteRowRecord = (row: Reservation) => {
-    const updatedData = data.filter((r) => r.id !== row.id);
-    setData(updatedData);
-  };
+  // const deleteRowRecord = (row: Reservation) => {
+  //   const updatedData = data.filter((r) => r.id !== row.id);
+  //   setData(updatedData);
+  // };
 
   const table = useReactTable({
     data,

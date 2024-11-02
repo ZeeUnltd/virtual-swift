@@ -9,7 +9,6 @@ import { Toaster } from '@/components/toaster';
 import { fonts } from '@/lib/fonts';
 import { siteConfig } from '@/lib/site-config';
 import { cn } from '@/lib/utils';
-import { MockDataProvider } from '@/lib/mockState';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

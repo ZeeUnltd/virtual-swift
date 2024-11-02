@@ -8,7 +8,6 @@ import { Intro } from '@/components/intro';
 import {useActiveSection} from "@/components/active-section-provider"
 // useContext(ThemeProviderContext)
 import { ThemeToggle } from '@/components/theme-toggle';
-import { useMockData } from '@/lib/mockState';
 interface DashboardProps {
   // Define any props your component might need here
 }
