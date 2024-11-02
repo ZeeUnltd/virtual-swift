@@ -1,7 +1,7 @@
 import { env } from '@/env.mjs';
 
 export const siteConfig = {
-  title: 'Azeez Oluwafemi Gafar | Front-end developer',
+  title: 'Azeez Oluwafemi Gafar | Senior Front-end developer',
   description:
     "Hello, I'm Azeez. I am front-end developer from Lagos, Nigeria. I enjoy building sites and apps. My focus is building solutions for users.",
   keywords: [
