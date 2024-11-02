@@ -2,9 +2,9 @@
 
 My Next App Boilerplate
 
-## 📍 Live
+<!-- ## 📍 Live
 
-Link to the live version: [https://blackvnicorn-portfolio.vercel.app](https://blackvnicorn-portfolio.vercel.app)
+Link to the live version: [https://blackvnicorn-portfolio.vercel.app](https://blackvnicorn-portfolio.vercel.app) -->
 
 ## 💾 Installation
 
@@ -37,5 +37,7 @@ and open http://localhost:3000 to see this app.
 - Framer-motion
 - React-hook-form
 - Resend
+- Shadcn
+- TanStack-Table
 
 If you encounter a problem, write to this e-mail address: [azegaf@gmail.com](mailto:azegaf@gmail.com)
