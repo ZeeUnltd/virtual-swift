@@ -29,6 +29,7 @@ import mockData from '@/lib/mock_data.json';
 import { DataTableColumnHeader } from '@/components/ui/data-table-column-header';
 import { Reservation } from '@/types/reservationTypes';
 import { DataTableRowActions } from '@/components/ui/data-table-row-actions';
+import { useActiveSection } from './active-section-provider';
 
 // const data: Reservation[] = mockData.reservations;
 
@@ -40,8 +41,9 @@ export function AppTable() {
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
-  const [data, setData] = React.useState<Reservation[]>(mockData.reservations);
+  // const [data, setData] = React.useState<Reservation[]>(mockData.reservations);
 
+  const { activeSection, setActiveSection, data, setData, createRowRecord, updateRowRecord, deleteRowRecord } = useActiveSection();
   const columns: ColumnDef<Reservation>[] = [
     {
       accessorKey: 'id',
@@ -200,11 +202,8 @@ export function AppTable() {
       accessorKey: 'action_button',
       header: 'Action',
       cell: ({ row }) => {
-        console.log({ row });
-
         return (
           <DataTableRowActions
-
             row={row}
           />
         );

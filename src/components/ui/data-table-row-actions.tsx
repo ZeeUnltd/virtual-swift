@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import mockData from '@/lib/mock_data.json';
 import { Reservation } from '@/types/reservationTypes';
+import { useActiveSection } from '../active-section-provider';
 
 
 interface DataTableRowActionsProps<TData> {
@@ -27,6 +28,7 @@ export function DataTableRowActions<TData>({
 
   const currentData = row.original
   
+  const { activeSection, setActiveSection, data, setData, createRowRecord, updateRowRecord, deleteRowRecord } = useActiveSection();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -42,7 +44,7 @@ export function DataTableRowActions<TData>({
         <DropdownMenuItem>Edit</DropdownMenuItem>
         <DropdownMenuItem>View</DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => (currentData)}>
+        <DropdownMenuItem onClick={() => (deleteRowRecord(currentData))}>
           Delete
           <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
         </DropdownMenuItem>

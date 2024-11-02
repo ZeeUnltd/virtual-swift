@@ -14,8 +14,8 @@ import type { SectionName } from '@/lib/types';
 
 type TActiveSectionContext = {
   data: Reservation[],
-  activeSection: SectionName;
-  setActiveSection: React.Dispatch<React.SetStateAction<SectionName>>;
+  activeSection?: SectionName;
+  setActiveSection?: React.Dispatch<React.SetStateAction<SectionName>>;
   timeOfLastClick: number;
   setTimeOfLastClick: React.Dispatch<React.SetStateAction<number>>;
   setData: React.Dispatch<React.SetStateAction<Reservation[]>>;
@@ -29,7 +29,7 @@ export const ActiveSectionContext = createContext<TActiveSectionContext | null>(
 );
 
 export const ActiveSectionProvider = ({ children }: PropsWithChildren) => {
-  const [activeSection, setActiveSection] = useState<SectionName>('Home');
+  // const [activeSection, setActiveSection] = useState<SectionName>('Dashboard');
   const [timeOfLastClick, setTimeOfLastClick] = useState(0);
   const [data, setData] = useState<Reservation[]>(mockData?.reservations);
   const createRowRecord = (newRow: Reservation) => {
@@ -48,13 +48,13 @@ export const ActiveSectionProvider = ({ children }: PropsWithChildren) => {
     setData(updatedData);
   };
   return (
+    // activeSection,
+    // setActiveSection,
     <ActiveSectionContext.Provider
       value={{
-        activeSection,
-        setActiveSection,
         timeOfLastClick,
-        setTimeOfLastClick,
         data,
+        setTimeOfLastClick,
         setData,
         createRowRecord,
         updateRowRecord,
