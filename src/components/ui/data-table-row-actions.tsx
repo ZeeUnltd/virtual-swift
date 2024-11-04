@@ -62,7 +62,7 @@ export function DataTableRowActions<TData>({
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[160px]">
         <DropdownMenuItem onClick={() => setShowEditModal(true)}>
-          Edit44
+          Edit
         </DropdownMenuItem>
         <DropdownMenuItem>View</DropdownMenuItem>
         <DropdownMenuSeparator />
