@@ -110,12 +110,12 @@ export function AppTable() {
           // if array is flat, do below
           // row.getValue("firstName").toLowerCase().includes(value.toLowerCase()) ||
           // row.getValue("lastName").toLowerCase().includes(value.toLowerCase())
-          row.original.customer.lastName
+          row.original.customer?.lastName
             .toLowerCase()
-            .includes(value.toLowerCase()) ||
-          row.original.customer.firstName
+            .includes(value?.toLowerCase()) ||
+          row.original.customer?.firstName
             .toLowerCase()
-            .includes(value.toLowerCase())
+            .includes(value?.toLowerCase())
         );
       },
     },

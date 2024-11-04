@@ -2,21 +2,23 @@ type Customer ={
     firstName: string;
     lastName: string;
   }
-  export enum ReservationStatus {
-  CHECKED_OUT = "CHECKED OUT",
-  NOT_CONFIRMED = "NOT CONFIRMED",
-  SEATED = "SEATED",
-  CONFIRMED = "CONFIRMED",
-}
-export enum ReservationShifts {
-  BREAKFAST = "BREAKFAST",
-  LUNCH = "LUNCH",
-  DINNER = "DINNER",
-}
-export enum ReservationArea {
-  BAR = "BAR",
-  MAIN_ROOM = "MAIN ROOM",
-}
+  export const ReservationStatus = [
+    {name: "CHECKED_OUT", value : "CHECKED OT"},
+    {name: "NOT_CONFIRMED", value : "NOT CONFIRMED"},
+    {name: "SEATED", value : "SEATED"},
+    {name: "CONFIRMED", value : "CONFIRMED"},
+  ]
+
+  export const ReservationShifts = [
+    { name: "BREAKFAST", value: "BREAKFAST" },
+    { name: "LUNCH", value: "LUNCH" },
+    { name: "DINNER", value: "DINNER" },
+  ]
+  
+  export const ReservationArea = [
+    { name: "BAR", value: "BAR" },
+    { name: "MAIN_ROOM", value: "MAIN ROOM" },
+  ]
   type Reservation ={
     id: number;
     businessDate: string;
