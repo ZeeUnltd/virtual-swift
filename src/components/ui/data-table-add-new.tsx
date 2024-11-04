@@ -66,7 +66,7 @@ export function DataTableAddNew<TData>({
       guestNotes,
     } = formData;
 
-    const idT = data.length + 1;
+    const idT = !edit ? data.length + 1 : formData?.id;
     newReservation = {
       id: idT,
       businessDate: businessDate ?? '',

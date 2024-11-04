@@ -38,10 +38,11 @@ export const ActiveSectionProvider = ({ children }: PropsWithChildren) => {
 
   const updateRowRecord = (updatedRow: Reservation) => {
     const updatedData = data.map((row) =>
-      row.id === updatedRow.id ? updatedRow : row
-    );
+      row.id === updatedRow.id 
+     ? {...row, ...updatedRow }
+     : row);   
+     setData(updatedData);
     toast.success('Invoice updated successfully');
-    setData(updatedData);
   };
 
   const deleteRowRecord = (row: any) => {

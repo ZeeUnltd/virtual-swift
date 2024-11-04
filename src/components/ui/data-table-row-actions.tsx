@@ -91,11 +91,7 @@ export function DataTableRowActions<TData>({
                 <DialogDescription>Edit an invoice</DialogDescription>
               </DialogHeader>
               <DataTableAddNew handleCloseDialog={handleEdit} edit oldData={currentData}/>
-              {/* <DialogFooter>
-                <Button onClick={() => setShowEditModal(!showEditModal)}>
-                  Submit
-                </Button>
-              </DialogFooter> */}
+            
             </DialogContent>
           </Dialog>
         </>
