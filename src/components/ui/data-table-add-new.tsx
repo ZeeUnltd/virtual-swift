@@ -9,11 +9,12 @@ import {
   Reservation,
 } from '@/types/reservationTypes';
 import { Button } from './button';
-
+import { toast } from 'sonner';
 import { useActiveSection } from '../active-section-provider';
 
 interface DataTableAddNewProps<TData> {
   handleCloseDialog: () => void;
+
 }
 
 export function DataTableAddNew<TData>({
@@ -71,6 +72,7 @@ export function DataTableAddNew<TData>({
         guestNotes,
       };
       await createRowRecord(newReservation);
+    toast.success('Invoice updated successfully');
       setFormData(null);
       handleCloseDialog();
     }
