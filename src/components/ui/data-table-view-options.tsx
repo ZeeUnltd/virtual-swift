@@ -54,6 +54,8 @@ export function DataTableViewOptions<TData>({
               </DropdownMenuCheckboxItem>
             );
           })}
+
+          
       </DropdownMenuContent>
     </DropdownMenu>
   );

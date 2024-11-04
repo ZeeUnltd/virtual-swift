@@ -1,10 +1,10 @@
-"use client"
+'use client';
 
 import * as React from 'react';
-import { DotsHorizontalIcon } from "@radix-ui/react-icons"
-import { Row } from "@tanstack/react-table"
-
-import { Button } from "@/components/ui/button"
+import { DotsHorizontalIcon } from '@radix-ui/react-icons';
+import { Row } from '@tanstack/react-table';
+import { DataTableAddNew } from './data-table-add-new';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,23 +12,43 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from '@/components/ui/dropdown-menu';
 import mockData from '@/lib/mock_data.json';
 import { Reservation } from '@/types/reservationTypes';
 import { useActiveSection } from '../active-section-provider';
-
-
+import {
+  Dialog,
+  DialogHeader,
+  DialogDescription,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+  DialogPortal,
+  DialogFooter,
+  DialogClose,
+} from '@/components/ui/dialog';
+import { Plus } from 'lucide-react';
 interface DataTableRowActionsProps<TData> {
-  row: Row<TData>
+  row: Row<TData>;
 }
 
 export function DataTableRowActions<TData>({
   row,
 }: DataTableRowActionsProps<TData>) {
-
-  const currentData = row.original
-  
-  const { activeSection, setActiveSection, data, setData, createRowRecord, updateRowRecord, deleteRowRecord } = useActiveSection();
+  const currentData = row.original;
+  const [showEditModal, setShowEditModal] = React.useState(false);
+  const handleEdit: React.MouseEventHandler<HTMLButtonElement> = (e) => {
+    setShowEditModal(!showEditModal)
+  };
+  const {
+    activeSection,
+    setActiveSection,
+    data,
+    setData,
+    createRowRecord,
+    updateRowRecord,
+    deleteRowRecord,
+  } = useActiveSection();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -41,14 +61,45 @@ export function DataTableRowActions<TData>({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[160px]">
-        <DropdownMenuItem>Edit</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setShowEditModal(true)}>
+          Edit44
+        </DropdownMenuItem>
         <DropdownMenuItem>View</DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => (deleteRowRecord(currentData))}>
+        <DropdownMenuItem onClick={() => deleteRowRecord(currentData)}>
           Delete
           <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
+
+      {showEditModal && (
+        <>
+          <Dialog
+            onOpenChange={() => setShowEditModal(!showEditModal)}
+            open={showEditModal}
+            defaultOpen={showEditModal}
+          >
+            <DialogTrigger >
+              <Button size="sm" className="relative">
+                <Plus className="h-4 w-4" />
+                Edit Invoice
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Edit Invoice</DialogTitle>
+                <DialogDescription>Edit an invoice</DialogDescription>
+              </DialogHeader>
+              <DataTableAddNew handleCloseDialog={handleEdit} edit oldData={currentData}/>
+              {/* <DialogFooter>
+                <Button onClick={() => setShowEditModal(!showEditModal)}>
+                  Submit
+                </Button>
+              </DialogFooter> */}
+            </DialogContent>
+          </Dialog>
+        </>
+      )}
     </DropdownMenu>
-  )
+  );
 }

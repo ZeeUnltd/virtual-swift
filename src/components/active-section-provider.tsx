@@ -9,7 +9,7 @@ import React, {
 
 import { Reservation } from '@/types/reservationTypes';
 import mockData from '@/lib/mock_data.json';
-
+import { toast } from 'sonner';
 import type { SectionName } from '@/lib/types';
 
 type TActiveSectionContext = {
@@ -29,27 +29,27 @@ export const ActiveSectionContext = createContext<TActiveSectionContext | null>(
 );
 
 export const ActiveSectionProvider = ({ children }: PropsWithChildren) => {
-  // const [activeSection, setActiveSection] = useState<SectionName>('Dashboard');
   const [timeOfLastClick, setTimeOfLastClick] = useState(0);
   const [data, setData] = useState<Reservation[]>(mockData?.reservations);
-  const createRowRecord = (newRow: Reservation) => {
-    setData([...data, newRow]);
+  const createRowRecord = async (newRow: Reservation) => {
+    await setData([...data, newRow]);
+    toast.success('Invoice created successfully');
   };
 
   const updateRowRecord = (updatedRow: Reservation) => {
     const updatedData = data.map((row) =>
       row.id === updatedRow.id ? updatedRow : row
     );
+    toast.success('Invoice updated successfully');
     setData(updatedData);
   };
 
   const deleteRowRecord = (row: any) => {
     const updatedData = data.filter((r) => r.id !== row.id);
     setData(updatedData);
+    toast.success('Invoice deleted successfully');
   };
   return (
-    // activeSection,
-    // setActiveSection,
     <ActiveSectionContext.Provider
       value={{
         timeOfLastClick,

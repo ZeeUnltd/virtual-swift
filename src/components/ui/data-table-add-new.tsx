@@ -9,19 +9,28 @@ import {
   Reservation,
 } from '@/types/reservationTypes';
 import { Button } from './button';
-import { toast } from 'sonner';
 import { useActiveSection } from '../active-section-provider';
 
 interface DataTableAddNewProps<TData> {
   handleCloseDialog: () => void;
-
+  edit: boolean;
+  oldData: object | null;
 }
 
 export function DataTableAddNew<TData>({
   handleCloseDialog,
-}: DataTableAddNewProps<TData>) {
+  edit,
+  oldData,
+}: any) {
+  if (edit) {
+    oldData.lastName = oldData?.customer?.lastName;
+    oldData.firstName = oldData?.customer?.firstName;
+    // oldData.businessDate = oldData?.businessDate.replace('.','/') ?? '';
+    // oldData.start = oldData?.start.replace('.','/') ?? '';
+    // oldData.end = oldData?.end.replace('.','/') ?? '';
+  }
   const [open, setOpen] = useState(false);
-  const [formData, setFormData] = useState(null);
+  const [formData, setFormData] = useState(oldData ?? null);
   const {
     activeSection,
     setActiveSection,
@@ -41,41 +50,43 @@ export function DataTableAddNew<TData>({
       return { ...prev, [e?.target.id]: e?.target.value };
     });
   };
+  let newReservation: Reservation;
+  if (formData) {
+    const {
+      id,
+      businessDate,
+      status,
+      shift,
+      start,
+      end,
+      quantity,
+      area,
+      firstName,
+      lastName,
+      guestNotes,
+    } = formData;
+
+    const idT = data.length + 1;
+    newReservation = {
+      id: idT,
+      businessDate: businessDate ?? '',
+      status: status ?? '',
+      shift: shift ?? '',
+      start: start ?? '',
+      end: end ?? '',
+      quantity: quantity ?? 0,
+      area: area ?? '',
+      customer: { firstName: firstName ?? '', lastName: lastName ?? '' },
+      guestNotes: guestNotes ?? '',
+    };
+  }
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const idT = data.length + 100;
-    if (formData) {
-      const {
-        id,
-        businessDate,
-        status,
-        shift,
-        start,
-        end,
-        quantity,
-        area,
-        firstName,
-        lastName,
-        guestNotes,
-      } = formData;
-      const newReservation: Reservation = {
-        id: idT,
-        businessDate,
-        status,
-        shift,
-        start,
-        end,
-        quantity,
-        area,
-        customer: { firstName, lastName },
-        guestNotes,
-      };
-      await createRowRecord(newReservation);
-    toast.success('Invoice updated successfully');
-      setFormData(null);
-      handleCloseDialog();
-    }
+    if (edit) await updateRowRecord(newReservation);
+    else await createRowRecord(newReservation);
+    setFormData(null);
+    handleCloseDialog();
 
     setOpen(false);
   };
@@ -89,6 +100,7 @@ export function DataTableAddNew<TData>({
               First Name
               <Input
                 onChange={(e) => handleInputChange(e)}
+                defaultValue={formData?.firstName}
                 id="firstName"
                 placeholder="Yuri"
               />
@@ -99,6 +111,7 @@ export function DataTableAddNew<TData>({
               Last Name
               <Input
                 onChange={(e) => handleInputChange(e)}
+                defaultValue={formData?.lastName}
                 id="lastName"
                 placeholder="Burchell"
               />
@@ -109,6 +122,7 @@ export function DataTableAddNew<TData>({
               <label htmlFor="businessDate" />
               Business Date
               <Input
+                defaultValue={formData?.businessDate}
                 onChange={(e) => handleInputChange(e)}
                 id="businessDate"
                 type="date"
@@ -119,6 +133,7 @@ export function DataTableAddNew<TData>({
               <label htmlFor="end" />
               Shift
               <select
+                value={formData?.shift}
                 className="block w-full p-2"
                 onChange={(e) => handleInputChange(e)}
                 id="shift"
@@ -140,6 +155,7 @@ export function DataTableAddNew<TData>({
               <label htmlFor="start" />
               Start Time
               <Input
+                defaultValue={formData?.start}
                 onChange={(e) => handleInputChange(e)}
                 id="start"
                 type="datetime-local"
@@ -149,6 +165,7 @@ export function DataTableAddNew<TData>({
               <label htmlFor="end" />
               End Time
               <Input
+                defaultValue={formData?.end}
                 onChange={(e) => handleInputChange(e)}
                 id="end"
                 type="datetime-local"
@@ -161,6 +178,7 @@ export function DataTableAddNew<TData>({
               <label htmlFor="status" />
               Status
               <select
+                value={formData?.status}
                 className="block w-full p-2"
                 onChange={(e) => handleInputChange(e)}
                 id="status"
@@ -179,6 +197,7 @@ export function DataTableAddNew<TData>({
               <label htmlFor="area" />
               Area
               <select
+                value={formData?.area}
                 className="block w-full p-2"
                 onChange={(e) => handleInputChange(e)}
                 id="area"
@@ -198,6 +217,7 @@ export function DataTableAddNew<TData>({
             <label htmlFor="quantity" />
             Quantity
             <Input
+              defaultValue={formData?.quantity}
               onChange={(e) => handleInputChange(e)}
               id="quantity"
               type="number"
@@ -208,6 +228,7 @@ export function DataTableAddNew<TData>({
             <label htmlFor="guestNotes" />
             Guest Notes
             <textarea
+              defaultValue={formData?.guestNotes}
               onChange={(e) => handleInputChange(e)}
               id="guestNotes"
               className="p-5"
@@ -215,7 +236,11 @@ export function DataTableAddNew<TData>({
             />
           </div>
 
-          <Button type="submit">Submit</Button>
+          <Button type="submit">{!edit ? 'Submit' : 'Update'}</Button>
+
+          <Button onClick={handleCloseDialog} variant={'outline'} type="submit">
+            Cancel
+          </Button>
         </div>
       </form>
     </>

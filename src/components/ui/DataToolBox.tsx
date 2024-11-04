@@ -102,11 +102,11 @@ export function DataTableToolbar<TData>({
               <DialogDescription>Create a new invoice</DialogDescription>
             </DialogHeader>
             <DataTableAddNew handleCloseDialog={handleCloseDialog} />
-            <DialogFooter>
+            {/* <DialogFooter>
               <Button onClick={() => setShowCreateModal(!showCreateModal)}>
                 Submit
               </Button>
-            </DialogFooter>
+            </DialogFooter> */}
           </DialogContent>
         </Dialog>
       </div>
