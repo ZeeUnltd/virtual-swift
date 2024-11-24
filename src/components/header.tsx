@@ -65,10 +65,10 @@ export const Header = () => {
               <Link
                 href={hash}
                 className="hover:text-foreground relative px-4 py-2 transition-colors"
-                onClick={() => {
-                  setActiveSection(name);
-                  setTimeOfLastClick(Date.now());
-                }}
+                // onClick={() => {
+                //   setActiveSection  && setActiveSection(name);
+                //   setTimeOfLastClick(Date.now());
+                // }}
               >
                 {name}
                 {name === activeSection && (
