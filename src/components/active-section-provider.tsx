@@ -60,7 +60,6 @@ export const ActiveSectionProvider = ({ children }: PropsWithChildren) => {
         createRowRecord,
         updateRowRecord,
         deleteRowRecord,
-        setActiveSection
       }}
     >
       {children}
