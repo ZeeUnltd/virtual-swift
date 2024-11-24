@@ -1,11 +1,6 @@
 'use client';
 
 import {
-  AwaitedReactNode,
-  JSXElementConstructor,
-  ReactElement,
-  ReactNode,
-  ReactPortal,
   useState,
 } from 'react';
 import { motion } from 'framer-motion';
@@ -156,7 +151,7 @@ export const Project = ({ project, index }: TProps) => {
         </DialogTrigger>
         <DialogContent
           aria-describedby={title}
-          className="text-muted-foreground max-h-screen w-[90%] rounded"
+          className="text-muted-foreground max-h-screen w-[90%] rounded overflow-y-auto my-6"
         >
           <DialogHeader>
             <DialogTitle className="text-md self-start font-medium">
